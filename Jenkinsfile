@@ -34,7 +34,7 @@ pipeline {
   stage('Publish image to Docker Hub') {
           
             steps {
-        withDockerRegistry(credentialsId: 'dockerhub', url: 'https://hub.docker.com/repository/docker/srinku28/maven-docker') {
+        withDockerRegistry(credentialsId: 'dockerhub', url: '') {
     // some block
             }
                   
