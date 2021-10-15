@@ -25,8 +25,8 @@ pipeline {
            steps {
               
                 sh 'docker build -t samplewebapp:latest .' 
-                sh 'docker tag samplewebapp nikhilnidhi/samplewebapp:latest'
-                //sh 'docker tag samplewebapp nikhilnidhi/samplewebapp:$BUILD_NUMBER'
+                sh 'docker tag samplewebapp srinku28/samplewebapp:latest'
+                //sh 'docker tag samplewebapp srinku28/samplewebapp:$BUILD_NUMBER'
                
           }
         }
@@ -34,10 +34,9 @@ pipeline {
   stage('Publish image to Docker Hub') {
           
             steps {
-        withDockerRegistry([ credentialsId: "dockerHub", url: "https://hub.docker.com/repository/docker/srinku28/maven-docker" ]) {
-          sh  'docker push nikhilnidhi/samplewebapp:latest'
-        //  sh  'docker push nikhilnidhi/samplewebapp:$BUILD_NUMBER' 
-        }
+        withDockerRegistry(credentialsId: 'dockerhub', url: 'https://hub.docker.com/repository/docker/srinku28/maven-docker') {
+    // some block
+            }
                   
           }
         }
