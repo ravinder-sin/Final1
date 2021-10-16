@@ -3,7 +3,7 @@ pipeline {
 	
 	  tools
     {
-       maven "maven"
+       maven "Maven"
     }
  stages {
       stage('checkout') {
@@ -45,7 +45,7 @@ pipeline {
              
             steps 
 			{
-                sh "docker run -d -p 7071:8080 srinku28/samplewebapp"
+                sh "docker run -d -p 82:8080 srinku28/samplewebapp"
  
             }
         }
