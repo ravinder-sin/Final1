@@ -35,6 +35,7 @@ pipeline {
           
             steps {
         withDockerRegistry(credentialsId: 'dockerhub', url: '') {
+		sh 'docker push srinku28/samplewebapp'
     // some block
             }
                   
